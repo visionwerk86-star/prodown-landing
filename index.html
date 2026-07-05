@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ProDown – Störungsmanagement für die Industrie</title>
+  <meta name="description" content="ProDown – Die professionelle App für industrielles Störungsmanagement. KI-Analyse, PDF-Berichte, Echtzeit-KPIs.">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: #0a1628; color: #fff; }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, #0a1628 0%, #1a2f4e 100%);
+      padding: 80px 20px;
+      text-align: center;
+      border-bottom: 1px solid #1e3a5f;
+    }
+    .logo { font-size: 48px; font-weight: 900; color: #fff; letter-spacing: -2px; }
+    .logo span { color: #f59e0b; }
+    .tagline { font-size: 20px; color: #94a3b8; margin-top: 12px; margin-bottom: 40px; }
+    .hero h1 { font-size: 42px; font-weight: 800; line-height: 1.2; max-width: 700px; margin: 0 auto 20px; }
+    .hero p { font-size: 18px; color: #94a3b8; max-width: 600px; margin: 0 auto 48px; }
+    .btn-primary {
+      display: inline-block;
+      background: #f59e0b;
+      color: #000;
+      padding: 18px 40px;
+      border-radius: 12px;
+      font-size: 18px;
+      font-weight: 700;
+      text-decoration: none;
+      margin: 8px;
+      transition: transform 0.2s;
+    }
+    .btn-primary:hover { transform: scale(1.04); }
+    .btn-secondary {
+      display: inline-block;
+      background: transparent;
+      color: #fff;
+      padding: 18px 40px;
+      border-radius: 12px;
+      font-size: 18px;
+      font-weight: 600;
+      text-decoration: none;
+      border: 2px solid #1e3a5f;
+      margin: 8px;
+      transition: border-color 0.2s;
+    }
+    .btn-secondary:hover { border-color: #f59e0b; color: #f59e0b; }
+
+    /* STATS */
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+      padding: 50px 20px;
+      background: #0d1f35;
+      flex-wrap: wrap;
+    }
+    .stat { text-align: center; }
+    .stat-num { font-size: 36px; font-weight: 800; color: #f59e0b; }
+    .stat-label { font-size: 14px; color: #94a3b8; margin-top: 4px; }
+
+    /* FEATURES */
+    .section { padding: 80px 20px; max-width: 1100px; margin: 0 auto; }
+    .section h2 { font-size: 36px; font-weight: 800; text-align: center; margin-bottom: 50px; }
+    .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+    .feature-card {
+      background: #0d1f35;
+      border: 1px solid #1e3a5f;
+      border-radius: 16px;
+      padding: 28px;
+      transition: border-color 0.2s;
+    }
+    .feature-card:hover { border-color: #f59e0b; }
+    .feature-icon { font-size: 36px; margin-bottom: 16px; }
+    .feature-card h3 { font-size: 20px; font-weight: 700; margin-bottom: 10px; }
+    .feature-card p { color: #94a3b8; line-height: 1.6; }
+
+    /* PRICING */
+    .pricing-section { background: #0d1f35; padding: 80px 20px; text-align: center; }
+    .pricing-section h2 { font-size: 36px; font-weight: 800; margin-bottom: 12px; }
+    .pricing-section .sub { color: #94a3b8; margin-bottom: 40px; font-size: 16px; }
+    .pricing-card {
+      display: inline-block;
+      background: linear-gradient(135deg, #1e3a5f, #2d5b8e);
+      border: 2px solid #f59e0b;
+      border-radius: 20px;
+      padding: 40px;
+      max-width: 420px;
+      width: 100%;
+    }
+    .pricing-badge { background: #f59e0b; color: #000; font-weight: 700; font-size: 13px; padding: 4px 14px; border-radius: 20px; display: inline-block; margin-bottom: 20px; }
+    .price { font-size: 52px; font-weight: 900; margin: 16px 0 4px; }
+    .price span { font-size: 20px; font-weight: 400; color: #94a3b8; }
+    .trial-badge { background: rgba(245,158,11,0.15); color: #f59e0b; padding: 8px 20px; border-radius: 20px; font-size: 14px; font-weight: 600; display: inline-block; margin: 16px 0; }
+    .feature-list { list-style: none; text-align: left; margin: 24px 0; }
+    .feature-list li { padding: 8px 0; color: #cbd5e1; font-size: 15px; }
+    .feature-list li::before { content: "✓ "; color: #f59e0b; font-weight: 700; }
+
+    /* DOWNLOAD */
+    .download-section { padding: 80px 20px; text-align: center; }
+    .download-section h2 { font-size: 36px; font-weight: 800; margin-bottom: 12px; }
+    .download-section p { color: #94a3b8; margin-bottom: 32px; font-size: 16px; }
+    .apk-box {
+      background: #0d1f35;
+      border: 1px solid #1e3a5f;
+      border-radius: 16px;
+      padding: 32px;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+    .apk-box .icon { font-size: 48px; margin-bottom: 16px; }
+    .apk-box h3 { font-size: 20px; margin-bottom: 8px; }
+    .apk-box p { color: #94a3b8; font-size: 14px; margin-bottom: 24px; }
+
+    /* FOOTER */
+    footer {
+      background: #060e1a;
+      text-align: center;
+      padding: 32px 20px;
+      color: #64748b;
+      font-size: 14px;
+      border-top: 1px solid #1e3a5f;
+    }
+    footer a { color: #94a3b8; text-decoration: none; }
+
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 28px; }
+      .price { font-size: 40px; }
+      .stats { gap: 30px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="logo">Pro<span>Down</span></div>
+    <div class="tagline">Industrielles Störungsmanagement</div>
+    <h1>Maschinen­ausfälle digital erfassen & analysieren</h1>
+    <p>KI-gestützte Störungsdiagnose, Echtzeit-KPIs und automatische PDF-Berichte – für Produktionsbetriebe jeder Größe.</p>
+    <a href="https://buy.stripe.com/14AcN51pn6WS02l0Kqf3a00" class="btn-primary">🚀 14 Tage kostenlos testen</a>
+    <a href="#download" class="btn-secondary">📱 App herunterladen</a>
+  </div>
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-num">14</div>
+      <div class="stat-label">Tage kostenlos</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">4</div>
+      <div class="stat-label">Sprachen (DE/EN/PL/TR)</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">KI</div>
+      <div class="stat-label">Störungsanalyse</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">∞</div>
+      <div class="stat-label">Nutzer & Maschinen</div>
+    </div>
+  </div>
+
+  <!-- FEATURES -->
+  <div class="section">
+    <h2>Alles was Ihre Produktion braucht</h2>
+    <div class="features">
+      <div class="feature-card">
+        <div class="feature-icon">🤖</div>
+        <h3>KI-Störungsanalyse</h3>
+        <p>Automatische Diagnose durch GPT-4o – mögliche Ursachen, Prüfschritte und Sofortmaßnahmen in Sekunden.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📊</div>
+        <h3>Echtzeit-KPIs</h3>
+        <p>Verfügbarkeit, MTTR, Ausfallkosten und Downtimerate – immer aktuell auf dem Dashboard.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📄</div>
+        <h3>PDF-Berichte</h3>
+        <p>Professionelle Auswertungen per Knopfdruck – täglich, wöchentlich oder monatlich.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔧</div>
+        <h3>Wartungsmanagement</h3>
+        <p>Wartungsaufgaben planen, zuweisen und verfolgen – direkt in der App.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🏭</div>
+        <h3>Maschinenverwaltung</h3>
+        <p>Alle Maschinen, Linien und Standorte zentral verwalten – unbegrenzt.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🌍</div>
+        <h3>Mehrsprachig</h3>
+        <p>Deutsch, Englisch, Polnisch und Türkisch – für internationale Teams in der Produktion.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRICING -->
+  <div class="pricing-section">
+    <h2>Einfache, transparente Preise</h2>
+    <p class="sub">Kein Abo-Chaos. Ein Plan. Alles inklusive.</p>
+    <div class="pricing-card">
+      <div class="pricing-badge">⭐ ProDown Professional</div>
+      <div class="price">149 € <span>/Monat</span></div>
+      <div class="trial-badge">🎁 14 Tage kostenlos – keine Kreditkarte nötig</div>
+      <ul class="feature-list">
+        <li>KI-Störungsanalyse (GPT-4o)</li>
+        <li>PDF-Berichte & KPI-Export</li>
+        <li>Wartungsmanagement</li>
+        <li>Unbegrenzte Nutzer</li>
+        <li>Unbegrenzte Maschinen</li>
+        <li>4 Sprachen (DE/EN/PL/TR)</li>
+        <li>Automatische Aktivierung nach Zahlung</li>
+        <li>E-Mail Support</li>
+      </ul>
+      <a href="https://buy.stripe.com/14AcN51pn6WS02l0Kqf3a00" class="btn-primary" style="width:100%;display:block;text-align:center;">Jetzt starten</a>
+    </div>
+  </div>
+
+  <!-- DOWNLOAD -->
+  <div class="download-section" id="download">
+    <h2>App herunterladen</h2>
+    <p>ProDown ist als Android-App verfügbar. Direkt installieren – kein Play Store nötig.</p>
+    <div class="apk-box">
+      <div class="icon">📱</div>
+      <h3>ProDown für Android</h3>
+      <p>APK direkt herunterladen und installieren.<br>Android 6.0 oder höher erforderlich.</p>
+      <a href="ProDown-release.apk" class="btn-primary" style="width:100%;display:block;text-align:center;">⬇️ APK herunterladen</a>
+    </div>
+    <p style="margin-top:20px;font-size:13px;color:#64748b;">Einstellungen → Sicherheit → „Unbekannte Quellen" aktivieren</p>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© <script>document.write(new Date().getFullYear())</script> Sascha Kraus – VisionWerk</p>
+    <p style="margin-top:8px;"><a href="mailto:visionwerk86@gmail.com">visionwerk86@gmail.com</a></p>
+  </footer>
+
+</body>
+</html>
